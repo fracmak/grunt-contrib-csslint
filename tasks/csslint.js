@@ -24,8 +24,9 @@ module.exports = function(grunt) {
     if (options.extraRules) {
       grunt.log.debug('Adding Extra CSSLint Rules', options.extraRules);
       grunt.file.expand({}, options.extraRules).forEach(function(filepath) {
+        filepath = path.resolve(filepath)
         grunt.log.debug('Adding Extra CSSLint Rule', filepath);
-        var rule = require('../../../' + filepath);
+        var rule = require(filepath);
         csslint.addRule(rule);
       });
     }
