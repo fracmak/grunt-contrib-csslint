@@ -116,6 +116,12 @@ Default value: `false`
 
 If the absoluteFilePathsForFormatters option is specified and set to `true`, the file names in the generated reports are absolute.
 
+###### extraRules
+Type: `array|String`
+Default value: `null`
+
+Specifies the file paths/patterns containing extra csslint rules. The files need to be commonjs modules that export the csslint rule object which will be given to csslint.addRule(...)
+
 ### Usage Examples
 
 ```js
